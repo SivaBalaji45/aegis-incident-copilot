@@ -1,0 +1,52 @@
+[
+  {
+    "id": "sample-001",
+    "provider_slug": "github",
+    "title": "Incidents and Pull Requests Degraded Availability",
+    "body_text": "We are investigating reports of degraded availability for Issues and Pull Requests. Users may see delayed webhook delivery and timeouts loading PR diffs.",
+    "severity": "major",
+    "category": "application-performance",
+    "relevant_chunk_ids": [],
+    "reference_summary": "A backend service handling PR diff rendering became overloaded, causing timeouts and delayed webhook delivery; mitigated by scaling the affected service and clearing the backlog queue."
+  },
+  {
+    "id": "sample-002",
+    "provider_slug": "cloudflare",
+    "title": "Widespread 500 errors across multiple services",
+    "body_text": "A change to our edge network configuration caused a spike in 500 errors for HTTP requests routed through affected data centers.",
+    "severity": "critical",
+    "category": "network",
+    "relevant_chunk_ids": [],
+    "reference_summary": "A bad edge configuration change propagated globally and caused request failures; rolled back the configuration change to restore service."
+  },
+  {
+    "id": "sample-003",
+    "provider_slug": "stripe",
+    "title": "Elevated API error rates for Payment Intents",
+    "body_text": "We identified elevated error rates for the Payment Intents API caused by increased latency in an upstream database.",
+    "severity": "major",
+    "category": "database",
+    "relevant_chunk_ids": [],
+    "reference_summary": "Upstream database latency caused elevated error rates on Payment Intents; mitigated by failing over to a healthy database replica."
+  },
+  {
+    "id": "sample-004",
+    "provider_slug": "datadog",
+    "title": "Delayed metric ingestion in US1 region",
+    "body_text": "Customers may observe delays in metric and log ingestion in the US1 region due to a capacity issue in our intake pipeline.",
+    "severity": "minor",
+    "category": "third-party-dependency",
+    "relevant_chunk_ids": [],
+    "reference_summary": "A capacity shortfall in the intake pipeline delayed metric/log ingestion in US1; resolved by adding intake capacity."
+  },
+  {
+    "id": "sample-005",
+    "provider_slug": "twilio",
+    "title": "SMS delivery delays in EU region",
+    "body_text": "We are seeing delays in SMS message delivery for customers sending messages through EU carriers, currently investigating with upstream partners.",
+    "severity": "minor",
+    "category": "third-party-dependency",
+    "relevant_chunk_ids": [],
+    "reference_summary": "An upstream EU carrier partner experienced delivery delays; Twilio rerouted traffic to alternate carrier routes to mitigate."
+  }
+]
